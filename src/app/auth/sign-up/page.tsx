@@ -8,7 +8,7 @@ import HighlightBar from '@/components/forms/sign-up/highlight-bar';
 
 type Props = {};
 
-export default async function SignUp(props: Props) {
+export default function SignUp(props: Props) {
 
   return (
     <div className='flex-1 py-36 md:px-16 w-full'>

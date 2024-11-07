@@ -27,7 +27,7 @@ function ButtonHandler(props: Props) {
           Create an Account
         </Button>
         <p>
-          Already have an account?{" "}
+          Already have an account?
           <Link href="auth/sign-in" className="font-bold">
             Sign In
           </Link>
