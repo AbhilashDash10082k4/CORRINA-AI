@@ -8,6 +8,7 @@ export type UserRegistrationProps = {
     password: string
     confirmPassword: string
     otp: string
+    confirmEmail: string
 }
 
 export const UserRegistrationSchema: ZodType<UserRegistrationProps> = z

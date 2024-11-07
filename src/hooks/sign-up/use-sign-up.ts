@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 import { Dispatch, SetStateAction, useState } from "react";
-import { toast, useToast } from "../use-toast";
+import { toast, useToast } from "../../components/ui/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useSignUp } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
@@ -62,6 +62,7 @@ export const useSignUpForm = () => {
         if (completeSignUp.status !== "complete") {
           return { message: "Something went wrong!" };
         }
+
         if (completeSignUp.status == "complete") {
           if (!signUp.createdUserId) return;
           const registered = await onCompleteUserRegistration(
