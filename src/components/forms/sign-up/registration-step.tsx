@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-empty-object-type */
 "use client"
 import { useAuthContextHook } from '@/context/use-auth-context';
 import React, { useState } from 'react'
@@ -6,18 +8,18 @@ import TypeSelectionForm from './type-selection-form';
 import { Spinner } from '@/components/spinner';
 import dynamic from 'next/dynamic';
 
-const DetailForm = dynamic (() => import('./account-details-form'),{
+const DetailForm = dynamic(() => import('./account-details-form'),{
     ssr: false,
-    loading: Spinner,
+    loading:  () => <Spinner noPadding={false} />
 })
 const OTPForm = dynamic(() => import('./otp-form'), {
     ssr: false,
-    loading: Spinner,
+    loading:  () => <Spinner noPadding={false} />,
 })
   
 type Props = {};
 
-function RegistrationFormSetup( {}: Props) {
+function RegistrationFormSetup( props : Props) {
     const {register, formState: {errors}, setValue} = useFormContext();
     const { currentStep } = useAuthContextHook();
     const [onOTP, setOnOTP] = useState<string>("");
